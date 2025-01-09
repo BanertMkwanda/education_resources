@@ -1,0 +1,11 @@
+
+
+<p>{{class_level}}</p>
+
+<ul>
+{% for grade in grades %}
+  <li><a href="{% url 'contents:subjects' grade.id %}">{{grade}}</a></li>
+{% empty %}
+  <li>No classs available</li>
+{% endfor %}	
+</ul>

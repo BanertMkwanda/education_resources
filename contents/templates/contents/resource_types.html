@@ -1,0 +1,11 @@
+
+
+<p>{{subject}}</p>
+
+<ul>
+{% for resource_type in resource_types %}
+  <li><a href="{% url 'contents:documents_short_info' resource_type.id %}">{{resource_type}}</a></li>
+{% empty %}
+  <li>No resource type available.</li>
+{% endfor %}  
+</ul>

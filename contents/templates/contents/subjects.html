@@ -1,0 +1,11 @@
+
+
+<p>{{grade}}</p>
+
+<ul>
+{% for subject in subjects %}
+  <li><a href="{% url 'contents:resource_types' subject.id %}">{{subject}}</a></li>
+{% empty %} 
+  <li>No subject availavle</li>
+{% endfor %}   	
+</ul>

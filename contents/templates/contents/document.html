@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Books</title>
+	</head>
+	<body>
+	    <h1>books</h1>
+			<div>
+					<h3>{{document.caption}}</h3>
+	    		<img src="{{document.front_cover.url}}" alt="no image" width="200" height="400" />
+	    		<img src="{{document.back_cover.url}}" alt="no image" width="200" height="400" />
+	    		<h5>{{document.price}}</h5>
+	    		<h5>{{document.date_added}}</h5>
+	    		<a href="{% url 'contents:download' document.id %}">download</a>
+	    	</div>
+			</div>
+	</body>
+</html>

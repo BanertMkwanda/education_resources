@@ -1,0 +1,11 @@
+
+
+
+<p>Education Level</p>
+<ul>
+{% for education_level in education_levels %}
+  <li><a href="{% url 'contents:class_levels' education_level.id %}">{{education_level}}</a></li>
+{% empty %}
+  <li>No any education level available.</li>
+{% endfor %}  
+</ul>

@@ -1,0 +1,17 @@
+<h1>EDUCATION RESOURCES</h1>
+
+<a href="{% url 'contents:education_levels' %}">Education Level</a>
+<p>Get your resources here at affordable price.</p>
+{% if user.is_authenticated %}
+  <p>Hello {{user.username }}</p>
+
+<form action="{% url 'users:logout' %}" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button name="submit">Log out</button>
+  <input type="hidden" name="next"
+    value="{% url 'contents:index' %}" />
+</form>  
+{% else %}
+  <a href="{% url 'users:login' %}">Log in</a>
+{% endif %}
